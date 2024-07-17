@@ -1,18 +1,37 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { GetProducts } from "@/services/products/productsRequests";
+import { Product } from "@/types";
+import { useEffect, useState } from "react";
 import { GiShoppingBag } from "react-icons/gi";
 
 const HomePage = () => {
-    const products = [
-        { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
-        { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
-        { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
-        { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
-        { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
-        { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
-        { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
-        { image: 'Image', description: 'Tênis', price: 'R$ 100,00' }
-    ];
+    const [products, setProducts] = useState<Product[]>([]);
+
+    const getAllProducts = async () => {
+        const dataRequest: Product[] | undefined = await GetProducts();
+
+        if (dataRequest === undefined) return;
+
+        setProducts(dataRequest);
+    }
+
+    useEffect(() => {
+        if (products.length) return;
+
+        getAllProducts();
+    });
+
+    // const products = [
+    //     { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
+    //     { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
+    //     { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
+    //     { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
+    //     { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
+    //     { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
+    //     { image: 'Image', description: 'Tênis', price: 'R$ 100,00' },
+    //     { image: 'Image', description: 'Tênis', price: 'R$ 100,00' }
+    // ];
 
     return (
         <main className="mx-auto max-w-5xl flex-col items-center justify-center px-5 xl:px-0">
@@ -58,13 +77,13 @@ const HomePage = () => {
                         return (
                             <Card className="flex flex-col items-center m-2 hover:scale-105 transform transition-all duration-250 ease-in-out">
                                 <CardHeader className="h-52">
-                                    {product.image}
+                                    {/* {product.image} */}
                                 </CardHeader>
                                 <CardContent>
                                     {product.description}
                                 </CardContent>
                                 <CardFooter>
-                                    {product.price}
+                                    R$ {product.price}
                                 </CardFooter>
                             </Card>
                         );
