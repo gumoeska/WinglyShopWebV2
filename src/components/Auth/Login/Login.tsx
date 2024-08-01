@@ -67,7 +67,7 @@ const Login = () => {
 
 
 
-            <div className="py-10 w-max">
+            <div className="py-10 w-96 pr-5">
 
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -78,7 +78,7 @@ const Login = () => {
                                 <FormItem>
                                     <FormLabel className="ml-4">Usuário</FormLabel>
                                     <FormControl>
-                                        <div className="flex items-center w-96">
+                                        <div className="flex items-center w-96 pr-5">
                                             <LuUser2 className="relative left-7 top-2 transform -translate-y-1/2" />
                                             <Input
                                                 {...field}
@@ -98,7 +98,7 @@ const Login = () => {
                                 <FormItem>
                                     <FormLabel className="ml-4">Senha</FormLabel>
                                     <FormControl>
-                                        <div className="flex items-center w-96">
+                                        <div className="flex items-center w-96 pr-5">
                                             <FaLock className="relative left-7 top-2 transform -translate-y-1/2" />
                                             <Input
                                                 {...field}

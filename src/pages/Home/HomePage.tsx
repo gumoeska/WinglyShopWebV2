@@ -44,7 +44,8 @@ const HomePage = () => {
                                     Wingly Shop.
                                 </span>
                                 <br />
-                                Onde moda e tecnologia se encontram para criar o seu estilo.
+                                {/* Onde moda e tecnologia se encontram para criar o seu estilo. */}
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </h1>
                         </div>
                     </div>

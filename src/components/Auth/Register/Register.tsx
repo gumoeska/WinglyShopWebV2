@@ -73,7 +73,7 @@ const Register = () => {
                 </div>
             </div>
 
-            <div className="py-10 w-max">
+            <div className="py-10">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                         <FormField
@@ -83,7 +83,7 @@ const Register = () => {
                                 <FormItem>
                                     <FormLabel className="ml-4">Usuário</FormLabel>
                                     <FormControl>
-                                        <div className="flex items-center w-96">
+                                        <div className="flex items-center w-96 pr-5">
                                             <LuUser2 className="relative left-7 top-2 transform -translate-y-1/2" />
                                             <Input
                                                 {...field}
@@ -103,7 +103,7 @@ const Register = () => {
                                 <FormItem>
                                     <FormLabel className="ml-4">Email</FormLabel>
                                     <FormControl>
-                                        <div className="flex items-center w-96">
+                                        <div className="flex items-center w-96 pr-5">
                                             <IoMdMail className="relative left-7 top-2 transform -translate-y-1/2" />
                                             <Input
                                                 {...field}
@@ -124,7 +124,7 @@ const Register = () => {
                                 <FormItem>
                                     <FormLabel className="ml-4">Senha</FormLabel>
                                     <FormControl>
-                                        <div className="flex items-center w-96">
+                                        <div className="flex items-center w-96 pr-5">
                                             <FaLock className="relative left-7 top-2 transform -translate-y-1/2" />
                                             <Input
                                                 {...field}
@@ -138,7 +138,7 @@ const Register = () => {
                             )}
                         />
 
-                        <div className="ml-4 flex flex-col">
+                        <div className="ml-4 flex flex-col pr-5">
                             <Button className="bg-winglyColor hover:bg-indigo-950" type="submit">Registrar</Button>
                         </div>
                     </form>
